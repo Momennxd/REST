@@ -1,0 +1,6 @@
+D:\Projects\My_Projects_c#\API_tester\REST_core\bin\Debug\REST_core.dll
+D:\Projects\My_Projects_c#\API_tester\REST_core\bin\Debug\REST_core.pdb
+D:\Projects\My_Projects_c#\API_tester\REST_core\obj\Debug\REST_core.csproj.AssemblyReference.cache
+D:\Projects\My_Projects_c#\API_tester\REST_core\obj\Debug\REST_core.csproj.CoreCompileInputs.cache
+D:\Projects\My_Projects_c#\API_tester\REST_core\obj\Debug\REST_core.dll
+D:\Projects\My_Projects_c#\API_tester\REST_core\obj\Debug\REST_core.pdb
