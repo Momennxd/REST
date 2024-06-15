@@ -17,52 +17,53 @@ namespace YourNamespace
         
         private async void button2_Click(object sender, EventArgs e)
         {
-             
+            REST_core.clsRespond r = new REST_core.clsRespond();
 
-            switch(cbMethod.SelectedItem.ToString())
+            switch (cbMethod.SelectedItem.ToString())
             {
                 case "GET":
                     {
-                        REST_core.clsRespond r = await REST_core.GET_API.SendGetRequest(txtURL.Text.Trim());
-                        txtResponse.Text = r.body;
-                        lblStatus.Text = r.code.ToString();
+                         r = await REST_core.GET_API.SendGetRequest(txtURL.Text.Trim());                          
+                       
                         break;
                     }
                 case "POST":
                     {
-                        REST_core.clsRespond r = 
-                            await REST_core.POST_API.SendPostRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
-                        txtResponse.Text = r.body;
-                        lblStatus.Text = r.code.ToString();
+                        r =  await REST_core.POST_API.SendPostRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
+                        
                         break;
                     }
                 case "PUT":
                     {
-                        REST_core.clsRespond r =
-                            await REST_core.PUT_API.SendPutRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
-                        txtResponse.Text = r.body;
-                        lblStatus.Text = r.code.ToString();
+                         r = await REST_core.PUT_API.SendPutRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
+                       
                         break;
                     }
                 case "PATCH":
                     {
-                        REST_core.clsRespond r =
-                            await REST_core.PATCH_API.SendPatchRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
-                        txtResponse.Text = r.body;
-                        lblStatus.Text = r.code.ToString();
+                        r =await REST_core.PATCH_API.SendPatchRequest(txtURL.Text.Trim(), txtReqBody.Text.Trim());
+                       
                         break;
                     }
                 case "DELETE":
                     {
-                        REST_core.clsRespond r =
-                            await REST_core.DELETE_API.SendDeleteRequest(txtURL.Text.Trim());
-                        txtResponse.Text = r.body;
-                        lblStatus.Text = r.code.ToString();
+                        r = await REST_core.DELETE_API.SendDeleteRequest(txtURL.Text.Trim());
+                       
                         break;
                     }
             }
 
-
+            if (r != null)
+            {
+                txtResponse.Text = r.body;
+                lblStatus.Text = r.code.ToString();
+            }
+            else
+            {
+                txtResponse.Text = "erro could not connect to the sever";
+                lblStatus.Text = "error";
+            }
+         
 
 
 
